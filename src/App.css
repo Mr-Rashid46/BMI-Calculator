@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+          :root {
+            --primary-color: #6366f1;
+            --secondary-color: #a5b4fc;
+            --background-color: #111827;
+            --card-background: #1f2937;
+            --text-color: #e5e7eb;
+            --light-text-color: #9ca3af;
+            --border-color: #374151;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+            --underweight-color: #3b82f6;
+            --normal-color: #10b981;
+            --overweight-color: #f59e0b;
+            --obesity-color: #ef4444;
+          }
+
+          body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+          }
+
+          .bmi-card {
+            background-color: var(--card-background);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            animation: fadeIn 0.8s ease-out;
+          }
+          
+          @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(-20px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+
+          .title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+          }
+
+          .subtitle {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin-bottom: 2rem;
+          }
+
+          .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+          }
+
+          .input-label {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          
+          .input-label span {
+            font-weight: 400;
+            color: var(--secondary-color);
+          }
+
+          .input-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: var(--border-color);
+            outline: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+          }
+
+          .input-slider:hover {
+            background: var(--light-text-color);
+          }
+
+          .input-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid var(--text-color);
+            transition: transform 0.2s ease;
+          }
+          
+          .input-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+          }
+
+          .output-section {
+            background-color: var(--background-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            margin-top: 2rem;
+          }
+
+          .output-label {
+            font-size: 1.1rem;
+            color: var(--light-text-color);
+            margin: 0;
+          }
+
+          .output-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--normal-color);
+            transition: color 0.4s ease;
+          }
+          
+          .category {
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-top: 1rem;
+            animation: slideUp 0.5s ease-out;
+          }
+
+          @keyframes slideUp {
+              from { opacity: 0; transform: translateY(10px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+          
+          .category.underweight {
+            background-color: var(--underweight-color);
+          }
+          .category.normal {
+            background-color: var(--normal-color);
+          }
+          .category.overweight {
+            background-color: var(--overweight-color);
+          }
+          .category.obesity {
+            background-color: var(--obesity-color);
+          }
